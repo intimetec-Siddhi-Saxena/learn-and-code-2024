@@ -1,15 +1,15 @@
 import java.io.*;
 import java.util.Arrays;
 
-public class KaprekarConstant {
+public class KaprekarRoutine {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter a 4-dgit number with at least two different digits");
         int number = Integer.parseInt(br.readLine());
         int numberOfIterations = checkKaprekarRoutine(number);
         if(numberOfIterations != -1) {
-			System.out.println("Kaprekar's constact reached in " + numberOfIterations + " iterations.");
-		}
+		System.out.println("Kaprekar's constact reached in " + numberOfIterations + " iterations.");
+	}
     }
     public static int[] getDigitsArray(int number) {
         int[] digits = new int[4];
@@ -25,17 +25,17 @@ public class KaprekarConstant {
             int[] digits = getDigitsArray(number);
             Arrays.sort(digits);
             int ascendingNumber = getNumber(digits);
-            int desceningNumber = getNumber(getReverseArray(digits));
+            int descendingNumber = getNumber(getReverseArray(digits));
 
             number = desceningNumber - ascendingNumber;
             numberOfIterations++;
-            System.out.println(numberOfIterations + ". " + desceningNumber + " - " + ascendingNumber + " = " + number);
+            System.out.println(numberOfIterations + ". " + descendingNumber + " - " + ascendingNumber + " = " + number);
         }
         if(number == 6174) {
-			return numberOfIterations;
+		return numberOfIterations;
         }
         else {
-			return -1;
+		return -1;
         }
     }
     public static int getNumber(int[] digits) {
