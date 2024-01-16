@@ -21,7 +21,7 @@ public class KaprekarRoutine {
     }
     public static int checkKaprekarRoutine(int number) {
         int numberOfIterations = 0;
-        while (number != 6174) {
+        while (number != 6174 || numberOfIterations > 7) {
             int[] digits = getDigitsArray(number);
             Arrays.sort(digits);
             int ascendingNumber = getNumber(digits);
